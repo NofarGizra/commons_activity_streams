@@ -152,6 +152,15 @@ function commons_activity_streams_views_default_views() {
   $handler->display->display_options['filters']['nid']['table'] = 'node_access';
   $handler->display->display_options['filters']['nid']['field'] = 'nid';
   $handler->display->display_options['filters']['nid']['relationship'] = 'field_target_nodes_target_id';
+  /* Filter criterion: Message: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'message';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['operator'] = 'not in';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'trusted_contact_request_approved' => 'trusted_contact_request_approved',
+    'trusted_contact_request_pending' => 'trusted_contact_request_pending',
+  );
   $handler->display->display_options['pane_category']['name'] = 'Commons';
   $handler->display->display_options['pane_category']['weight'] = '0';
 
@@ -248,6 +257,15 @@ function commons_activity_streams_views_default_views() {
   $handler->display->display_options['filters']['type_category']['field'] = 'type_category';
   $handler->display->display_options['filters']['type_category']['value'] = array(
     'message_type' => 'message_type',
+  );
+  /* Filter criterion: Message: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'message';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['operator'] = 'not in';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'trusted_contact_request_approved' => 'trusted_contact_request_approved',
+    'trusted_contact_request_pending' => 'trusted_contact_request_pending',
   );
 
   /* Display: Activity (Sidebar) */
