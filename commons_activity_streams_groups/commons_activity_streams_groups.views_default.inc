@@ -92,15 +92,6 @@ function commons_activity_streams_groups_views_default_views() {
   $handler->display->display_options['filters']['type_category']['value'] = array(
     'message_type' => 'message_type',
   );
-  /* Filter criterion: Message: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'message';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['operator'] = 'not in';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'trusted_contact_request_approved' => 'trusted_contact_request_approved',
-    'trusted_contact_request_pending' => 'trusted_contact_request_pending',
-  );
 
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
